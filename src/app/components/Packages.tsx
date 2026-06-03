@@ -1,61 +1,33 @@
 import { useLang } from "./LangContext";
-import pkgExperience from "figma:asset/pkg-experience.webp";
-import pkgOrigins from "figma:asset/pkg-origins.webp";
 import { Moon, UtensilsCrossed, Footprints, Bird, Waves, Users, Truck } from "lucide-react";
+import data from "../../../content/packages/index.json";
 
-type Detail = { Icon: typeof Moon; es: string; en: string };
+// Mapa de íconos: el contenido editable guarda un nombre, acá lo convertimos al ícono.
+const ICONS: Record<string, typeof Moon> = {
+  moon: Moon,
+  meals: UtensilsCrossed,
+  walks: Footprints,
+  bird: Bird,
+  kayak: Waves,
+  community: Users,
+  transfer: Truck,
+};
 
+type Detail = { icon: string; es: string; en: string };
 interface Pkg {
-  img: string;
+  image: string;
   nameEs: string; nameEn: string;
   nightsEs: string; nightsEn: string;
   descEs: string; descEn: string;
-  details: Detail[];
+  priceEs?: string; priceEn?: string;
   panel: string;
   objPos?: string;
+  details: Detail[];
 }
-
-const packages: Pkg[] = [
-  {
-    img: pkgExperience,
-    nameEs: "Yacutinga Experience",
-    nameEn: "Yacutinga Experience",
-    nightsEs: "2 noches",
-    nightsEn: "2 nights",
-    descEs: "La puerta de entrada. Dos noches para descubrir el bosque, sus habitantes y el silencio profundo de la selva paranaense.",
-    descEn: "The gateway. Two nights to discover the forest, its inhabitants and the deep silence of the Paranaense jungle.",
-    details: [
-      { Icon: Moon, es: "2 noches", en: "2 nights" },
-      { Icon: UtensilsCrossed, es: "Todas las comidas", en: "All meals" },
-      { Icon: Footprints, es: "Caminatas día y noche", en: "Day & night walks" },
-      { Icon: Bird, es: "Avistaje de aves", en: "Birdwatching" },
-      { Icon: Truck, es: "Traslado 4x4", en: "4x4 transfer" },
-    ],
-    panel: "#1B2E1C",
-    objPos: "center 96%",
-  },
-  {
-    img: pkgOrigins,
-    nameEs: "Yacutinga Origins",
-    nameEn: "Yacutinga Origins",
-    nightsEs: "3 noches",
-    nightsEn: "3 nights",
-    descEs: "La experiencia completa. Tres noches para entrar de verdad: kayak en el río, yoga al amanecer y una visita a la comunidad guaraní vecina.",
-    descEn: "The complete experience. Three nights to truly enter: river kayaking, sunrise yoga and a visit to the neighbouring Guaraní community.",
-    details: [
-      { Icon: Moon, es: "3 noches", en: "3 nights" },
-      { Icon: UtensilsCrossed, es: "Todas las comidas", en: "All meals" },
-      { Icon: Waves, es: "Kayak en el río", en: "River kayaking" },
-      { Icon: Users, es: "Comunidad guaraní", en: "Guaraní community" },
-      { Icon: Truck, es: "Traslado 4x4", en: "4x4 transfer" },
-    ],
-    panel: "#3D5A3E",
-    objPos: "center 92%",
-  },
-];
 
 export function Packages() {
   const { t } = useLang();
+  const items = data.items as Pkg[];
 
   return (
     <section id="paquetes" style={{ background: "#ECE5D7", padding: "clamp(90px, 11vw, 140px) 0" }}>
@@ -69,7 +41,7 @@ export function Packages() {
             fontSize: "clamp(1rem, 1.7vw, 1.3rem)",
             margin: "0 0 14px",
           }}>
-            {t("Estadías all-inclusive", "All-inclusive stays")}
+            {t(data.headerKickerEs, data.headerKickerEn)}
           </p>
           <h2 style={{
             fontFamily: "'DM Serif Display', serif",
@@ -80,13 +52,13 @@ export function Packages() {
             letterSpacing: "-0.01em",
             margin: 0,
           }}>
-            {t("Dos maneras de entrar a la selva", "Two ways into the rainforest")}
+            {t(data.headerTitleEs, data.headerTitleEn)}
           </h2>
         </div>
 
         {/* Bloques */}
         <div style={{ display: "flex", flexDirection: "column", gap: 28 }}>
-          {packages.map((p, i) => (
+          {items.map((p, i) => (
             <PackageBlock key={i} pkg={p} flip={i % 2 === 1} />
           ))}
         </div>
@@ -101,10 +73,7 @@ export function Packages() {
           textAlign: "center",
           marginTop: 48,
         }}>
-          {t(
-            "Cupos limitados · Precios a consultar.",
-            "Limited spaces · Prices on request."
-          )}
+          {t(data.noteEs, data.noteEn)}
         </p>
       </div>
 
@@ -122,12 +91,13 @@ export function Packages() {
 
 function PackageBlock({ pkg, flip }: { pkg: Pkg; flip: boolean }) {
   const { t } = useLang();
+  const price = t(pkg.priceEs || "", pkg.priceEn || "");
 
   return (
     <div className="pkg-block">
       {/* Imagen */}
       <div className="pkg-imgwrap" style={{ position: "relative", order: flip ? 2 : 1, overflow: "hidden" }}>
-        <img className="pkg-img" src={pkg.img} alt={t(pkg.nameEs, pkg.nameEn)} loading="lazy" style={{ objectPosition: pkg.objPos || "center" }} />
+        <img className="pkg-img" src={pkg.image} alt={t(pkg.nameEs, pkg.nameEn)} loading="lazy" style={{ objectPosition: pkg.objPos || "center" }} />
       </div>
 
       {/* Panel de color liso */}
@@ -181,20 +151,33 @@ function PackageBlock({ pkg, flip }: { pkg: Pkg; flip: boolean }) {
 
         {/* Iconografía / detalles */}
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px 18px", marginBottom: 18 }}>
-          {pkg.details.map((d, k) => (
-            <div key={k} style={{ display: "flex", alignItems: "center", gap: 10 }}>
-              <d.Icon size={18} color="#C4623A" strokeWidth={1.6} />
-              <span style={{
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
-                color: "rgba(242,237,227,0.82)",
-                fontSize: "0.82rem",
-                lineHeight: 1.3,
-              }}>
-                {t(d.es, d.en)}
-              </span>
-            </div>
-          ))}
+          {pkg.details.map((d, k) => {
+            const Icon = ICONS[d.icon] || Moon;
+            return (
+              <div key={k} style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                <Icon size={18} color="#C4623A" strokeWidth={1.6} />
+                <span style={{
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  color: "rgba(242,237,227,0.82)",
+                  fontSize: "0.82rem",
+                  lineHeight: 1.3,
+                }}>
+                  {t(d.es, d.en)}
+                </span>
+              </div>
+            );
+          })}
         </div>
+
+        {/* Precio opcional */}
+        {price ? (
+          <p style={{
+            fontFamily: "'DM Serif Display', serif",
+            color: "#F2EDE3",
+            fontSize: "1.25rem",
+            margin: "0 0 16px",
+          }}>{price}</p>
+        ) : null}
 
         {/* Botón de contacto */}
         <a

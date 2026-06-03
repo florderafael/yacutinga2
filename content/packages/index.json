@@ -1,0 +1,50 @@
+{
+  "headerKickerEs": "Estadías all-inclusive",
+  "headerKickerEn": "All-inclusive stays",
+  "headerTitleEs": "Dos maneras de entrar a la selva",
+  "headerTitleEn": "Two ways into the rainforest",
+  "noteEs": "Cupos limitados · Precios a consultar.",
+  "noteEn": "Limited spaces · Prices on request.",
+  "items": [
+    {
+      "image": "/uploads/pkg-experience.webp",
+      "nameEs": "Yacutinga Experience",
+      "nameEn": "Yacutinga Experience",
+      "nightsEs": "2 noches",
+      "nightsEn": "2 nights",
+      "descEs": "La puerta de entrada. Dos noches para descubrir el bosque, sus habitantes y el silencio profundo de la selva paranaense.",
+      "descEn": "The gateway. Two nights to discover the forest, its inhabitants and the deep silence of the Paranaense jungle.",
+      "priceEs": "",
+      "priceEn": "",
+      "panel": "#1B2E1C",
+      "objPos": "center 96%",
+      "details": [
+        { "icon": "moon", "es": "2 noches", "en": "2 nights" },
+        { "icon": "meals", "es": "Todas las comidas", "en": "All meals" },
+        { "icon": "walks", "es": "Caminatas día y noche", "en": "Day & night walks" },
+        { "icon": "bird", "es": "Avistaje de aves", "en": "Birdwatching" },
+        { "icon": "transfer", "es": "Traslado 4x4", "en": "4x4 transfer" }
+      ]
+    },
+    {
+      "image": "/uploads/pkg-origins.webp",
+      "nameEs": "Yacutinga Origins",
+      "nameEn": "Yacutinga Origins",
+      "nightsEs": "3 noches",
+      "nightsEn": "3 nights",
+      "descEs": "La experiencia completa. Tres noches para entrar de verdad: kayak en el río, yoga al amanecer y una visita a la comunidad guaraní vecina.",
+      "descEn": "The complete experience. Three nights to truly enter: river kayaking, sunrise yoga and a visit to the neighbouring Guaraní community.",
+      "priceEs": "",
+      "priceEn": "",
+      "panel": "#3D5A3E",
+      "objPos": "center 92%",
+      "details": [
+        { "icon": "moon", "es": "3 noches", "en": "3 nights" },
+        { "icon": "meals", "es": "Todas las comidas", "en": "All meals" },
+        { "icon": "kayak", "es": "Kayak en el río", "en": "River kayaking" },
+        { "icon": "community", "es": "Comunidad guaraní", "en": "Guaraní community" },
+        { "icon": "transfer", "es": "Traslado 4x4", "en": "4x4 transfer" }
+      ]
+    }
+  ]
+}
