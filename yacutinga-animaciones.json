@@ -1,0 +1,202 @@
+{
+  "meta": {
+    "proyecto": "Yacutinga Lodge — sitio one-page",
+    "descripcion": "Inventario de todas las animaciones e interacciones del sitio. Documento de referencia: lista qué se anima, dónde, con qué disparador, duración y curva. Sirve para handoff o para mantener consistencia al editar.",
+    "version": "1.0",
+    "actualizado": "2026-06-03"
+  },
+
+  "tokens": {
+    "duraciones": {
+      "micro": "0.2s",
+      "base": "0.25s",
+      "media": "0.35s",
+      "suave": "0.4s",
+      "reveal": "0.75s",
+      "imagen": "0.8s",
+      "loop_galeria": "80s"
+    },
+    "easings": {
+      "default": "ease",
+      "loop": "linear"
+    },
+    "reduced_motion": "Si el sistema del usuario pide 'reducir movimiento', el carrusel de la galería se detiene (animation: none). El resto son transiciones cortas que no se desactivan."
+  },
+
+  "animaciones": [
+    {
+      "id": "scroll-reveal",
+      "nombre": "Aparición al hacer scroll",
+      "componente": "useScrollFade.tsx (hook reutilizable)",
+      "tipo": "scroll-reveal",
+      "disparador": "IntersectionObserver, cuando el elemento entra ~12% en pantalla (threshold 0.12). Ocurre una sola vez.",
+      "objetivo": "Secciones/bloques que usan el hook useScrollFade()",
+      "propiedades": { "opacity": "0 → 1", "transform": "translateY(28px) → translateY(0)" },
+      "duracion": "0.75s",
+      "easing": "ease",
+      "repeticion": "una vez",
+      "notas": "Para cambiar la distancia de entrada, editar translateY(28px). Para cambiar velocidad, editar 0.75s en useScrollFade.tsx."
+    },
+    {
+      "id": "nav-fondo",
+      "nombre": "Barra de navegación al hacer scroll",
+      "componente": "Nav.tsx",
+      "tipo": "state-change",
+      "disparador": "window.scrollY > 80px",
+      "objetivo": "Barra superior fija",
+      "propiedades": {
+        "background": "transparent → rgba(18,28,19,0.88)",
+        "backdropFilter": "none → blur(16px)"
+      },
+      "duracion": "0.6s",
+      "easing": "ease",
+      "repeticion": "según scroll",
+      "notas": "El umbral de 80px define cuándo aparece el fondo."
+    },
+    {
+      "id": "nav-links-hover",
+      "nombre": "Hover en links del menú",
+      "componente": "Nav.tsx",
+      "tipo": "hover",
+      "disparador": "mouse sobre el link",
+      "objetivo": "Links de navegación",
+      "propiedades": { "color": "cambia al pasar el mouse" },
+      "duracion": "0.2s",
+      "easing": "ease",
+      "repeticion": "por interacción"
+    },
+    {
+      "id": "hero-cta-hover",
+      "nombre": "Hover en el botón del hero",
+      "componente": "Hero.tsx",
+      "tipo": "hover",
+      "disparador": "mouse sobre el botón 'Consultar disponibilidad'",
+      "objetivo": "Botón pill translúcido",
+      "propiedades": { "background": "se aclara", "borderColor": "cambia" },
+      "duracion": "0.25s",
+      "easing": "ease",
+      "repeticion": "por interacción"
+    },
+    {
+      "id": "galeria-carrusel",
+      "nombre": "Carrusel continuo de la galería",
+      "componente": "Gallery.tsx",
+      "tipo": "loop",
+      "disparador": "automático al cargar",
+      "objetivo": ".gal-track (fila de fotos duplicada)",
+      "propiedades": { "transform": "translateX(0) → translateX(-50%)" },
+      "duracion": "80s (45s en mobile)",
+      "easing": "linear",
+      "repeticion": "infinita",
+      "notas": "Se pausa al pasar el mouse (animation-play-state: paused). Bordes con degradado de máscara. Se detiene con prefers-reduced-motion. Para acelerar/frenar, editar 80s."
+    },
+    {
+      "id": "experiencias-card-hover",
+      "nombre": "Tarjetas de experiencias (hover)",
+      "componente": "Experiences.tsx",
+      "tipo": "hover",
+      "disparador": "mouse sobre la tarjeta",
+      "objetivo": ".exp-card y sus hijos",
+      "propiedades": {
+        "imagen": "scale(1) → scale(1.06)",
+        "gradiente": "se oscurece",
+        "flecha": "opacity 0.85 → 1, scale 1.06, fondo claro",
+        "descripcion": "max-height 0 → 96px, opacity 0 → 1, translateY(6px) → 0"
+      },
+      "duracion": "imagen 0.8s · gradiente 0.4s · flecha 0.35s · descripción 0.45s",
+      "easing": "ease",
+      "repeticion": "por interacción",
+      "notas": "En mobile la descripción está siempre visible (sin hover)."
+    },
+    {
+      "id": "alojamiento-card-hover",
+      "nombre": "Tarjetas de alojamiento (hover)",
+      "componente": "Accommodation.tsx",
+      "tipo": "hover",
+      "disparador": "mouse sobre la tarjeta",
+      "objetivo": ".acc-card y sus hijos",
+      "propiedades": {
+        "imagen": "scale en hover (transform 0.8s)",
+        "gradiente_reposo": "opacity 0.4s",
+        "panel_detalle": "opacity 0 → 1 al hacer hover"
+      },
+      "duracion": "imagen 0.8s · gradiente 0.4s · panel 0.4s · estado reposo 0.35s",
+      "easing": "ease",
+      "repeticion": "por interacción",
+      "notas": "En reposo se ve imagen + título; en hover aparece el panel de color con detalles. En mobile se muestra apilado."
+    },
+    {
+      "id": "alojamiento-btn-hover",
+      "nombre": "Botón 'Consultar disponibilidad' (alojamiento)",
+      "componente": "Accommodation.tsx",
+      "tipo": "hover",
+      "disparador": "mouse sobre el botón",
+      "objetivo": ".acc-btn",
+      "propiedades": { "background": "#F2EDE3 → #E2DAC8", "transform": "translateY(0) → translateY(-2px)" },
+      "duracion": "0.25s",
+      "easing": "ease",
+      "repeticion": "por interacción"
+    },
+    {
+      "id": "paquetes-btn-hover",
+      "nombre": "Botón 'Consultar disponibilidad' (paquetes)",
+      "componente": "Packages.tsx",
+      "tipo": "hover",
+      "disparador": "mouse sobre el botón",
+      "objetivo": "Botón cream del panel",
+      "propiedades": { "background": "#F2EDE3 → #E2DAC8", "transform": "translateY(0) → translateY(-2px)" },
+      "duracion": "0.25s",
+      "easing": "ease",
+      "repeticion": "por interacción"
+    },
+    {
+      "id": "comollegar-btn-hover",
+      "nombre": "Botón 'Coordinar mi llegada'",
+      "componente": "HowToArrive.tsx",
+      "tipo": "hover",
+      "disparador": "mouse sobre el botón",
+      "objetivo": "Botón verde",
+      "propiedades": { "background": "#1B2E1C → #3D5A3E", "transform": "translateY(0) → translateY(-2px)" },
+      "duracion": "0.25s",
+      "easing": "ease",
+      "repeticion": "por interacción"
+    },
+    {
+      "id": "testimonios-carrusel",
+      "nombre": "Carrusel de testimonios",
+      "componente": "Reviews.tsx",
+      "tipo": "smooth-scroll",
+      "disparador": "click en las flechas ← →",
+      "objetivo": ".rev-cards (fila scrolleable)",
+      "propiedades": { "scroll": "desplazamiento de 340px con behavior: smooth" },
+      "duracion": "scroll suave del navegador",
+      "easing": "nativo",
+      "repeticion": "por interacción",
+      "notas": "Las flechas tienen hover: fondo #1B2E1C y texto cream, 0.2s."
+    },
+    {
+      "id": "contacto-campos-focus",
+      "nombre": "Campos del formulario (focus)",
+      "componente": "Contact.tsx",
+      "tipo": "focus",
+      "disparador": "foco en el input/textarea",
+      "objetivo": "Inputs con borde inferior",
+      "propiedades": { "borderColor": "línea clara → terracota rgba(196,98,58,0.5)" },
+      "duracion": "0.25s",
+      "easing": "ease",
+      "repeticion": "por interacción"
+    },
+    {
+      "id": "whatsapp-btn-hover",
+      "nombre": "Botón flotante de WhatsApp",
+      "componente": "WhatsAppButton.tsx",
+      "tipo": "hover",
+      "disparador": "mouse sobre el botón",
+      "objetivo": "Botón circular fijo",
+      "propiedades": { "transform": "leve escala/elevación", "boxShadow": "se intensifica" },
+      "duracion": "0.2s",
+      "easing": "ease",
+      "repeticion": "por interacción"
+    }
+  ]
+}
