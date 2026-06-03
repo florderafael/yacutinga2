@@ -37,7 +37,7 @@ export function Gallery() {
   return (
     <section id="galeria" style={{ background: "#111A12", padding: "clamp(90px, 11vw, 130px) 0" }}>
       {/* Header centrado */}
-      <div style={{ textAlign: "center", maxWidth: 760, margin: "0 auto 56px", padding: "0 48px" }}>
+      <div style={{ textAlign: "center", maxWidth: 760, margin: "0 auto 56px", padding: "0 clamp(24px, 4vw, 48px)" }}>
         <p style={{
           fontFamily: "'DM Serif Display', serif",
           fontStyle: "italic",

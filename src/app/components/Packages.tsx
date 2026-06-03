@@ -59,7 +59,7 @@ export function Packages() {
 
   return (
     <section id="paquetes" style={{ background: "#ECE5D7", padding: "clamp(90px, 11vw, 140px) 0" }}>
-      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 48px" }}>
+      <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 clamp(24px, 4vw, 48px)" }}>
         {/* Header centrado */}
         <div style={{ textAlign: "center", maxWidth: 760, margin: "0 auto 64px" }}>
           <p style={{

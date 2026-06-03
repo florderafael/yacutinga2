@@ -40,7 +40,7 @@ export function Experiences() {
 
   return (
     <section id="experiencias" style={{ background: "#1B2E1C", padding: "clamp(90px, 11vw, 140px) 0" }}>
-      <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 48px" }}>
+      <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 clamp(24px, 4vw, 48px)" }}>
         {/* Header centrado */}
         <div style={{ textAlign: "center", maxWidth: 760, margin: "0 auto 64px" }}>
           <p style={{
@@ -95,7 +95,7 @@ export function Experiences() {
           position: relative;
           overflow: hidden;
           border-radius: 10px;
-          aspect-ratio: 3 / 4;
+          aspect-ratio: 2 / 3;
           display: block;
           text-decoration: none;
         }
@@ -169,7 +169,7 @@ export function Experiences() {
         @media (max-width: 1024px) { .exp-grid { grid-template-columns: 1fr 1fr; } }
         @media (max-width: 560px) {
           .exp-grid { grid-template-columns: 1fr; }
-          .exp-card { aspect-ratio: 4 / 3; }
+          .exp-card { aspect-ratio: 4 / 5; }
           .exp-desc { max-height: 96px; opacity: 1; transform: none; margin-top: 8px; }
         }
       `}</style>

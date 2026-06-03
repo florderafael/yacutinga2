@@ -96,6 +96,7 @@ export function Hero() {
       {/* Bottom right: Tripadvisor card */}
       <a
         href="#resenas"
+        className="hero-ta"
         style={{
           position: "absolute",
           bottom: 64,
@@ -128,6 +129,12 @@ export function Hero() {
           {t("estrellas en Tripadvisor", "stars on Tripadvisor")}
         </p>
       </a>
+
+      <style>{`
+        @media (max-width: 760px) {
+          .hero-ta { top: 76px !important; bottom: auto !important; right: 16px !important; left: auto !important; transform: scale(0.82); transform-origin: top right; }
+        }
+      `}</style>
 
       {/* Scroll line */}
       <div style={{

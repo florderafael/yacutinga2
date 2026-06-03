@@ -65,7 +65,7 @@ export function Accommodation() {
 
   return (
     <section id="alojamiento" style={{ background: "#F2EDE3", padding: "clamp(90px, 11vw, 140px) 0" }}>
-      <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 48px" }}>
+      <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 clamp(24px, 4vw, 48px)" }}>
         {/* Header centrado */}
         <div style={{ textAlign: "center", maxWidth: 760, margin: "0 auto 64px" }}>
           <p style={{
@@ -124,7 +124,7 @@ export function Accommodation() {
 
       <style>{`
         .acc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-        .acc-card { position: relative; aspect-ratio: 3 / 4; border-radius: 10px; overflow: hidden; }
+        .acc-card { position: relative; aspect-ratio: 2 / 3; border-radius: 10px; overflow: hidden; }
         .acc-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.8s ease; }
         .acc-card:hover .acc-img { transform: scale(1.05); }
         .acc-grad { position: absolute; inset: 0; background: linear-gradient(to top, rgba(18,28,18,0.8) 0%, rgba(18,28,18,0.1) 50%, transparent 75%); transition: opacity 0.4s ease; }
@@ -164,7 +164,7 @@ export function Accommodation() {
         @media (max-width: 600px) {
           .acc-grid { grid-template-columns: 1fr; }
           .acc-card { aspect-ratio: auto; }
-          .acc-img { position: relative; height: 220px; }
+          .acc-img { position: relative; height: 300px; }
           .acc-grad, .acc-rest { display: none; }
           .acc-panel { position: relative; opacity: 1; }
         }

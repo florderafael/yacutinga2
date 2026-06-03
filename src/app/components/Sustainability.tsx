@@ -66,7 +66,7 @@ export function Sustainability() {
   const { t } = useLang();
 
   return (
-    <section id="conservacion" style={{ position: "relative", background: "#F2EDE3", overflow: "hidden", padding: "clamp(90px, 12vw, 150px) 24px" }}>
+    <section id="conservacion" style={{ position: "relative", background: "#F2EDE3", overflow: "hidden", padding: "clamp(90px, 12vw, 150px) 0" }}>
       {/* Misma textura que "El lodge" */}
       <div aria-hidden="true" style={{
         position: "absolute", inset: 0,
@@ -75,7 +75,7 @@ export function Sustainability() {
         opacity: 0.05, mixBlendMode: "multiply", pointerEvents: "none",
       }} />
 
-      <div style={{ position: "relative", zIndex: 1, maxWidth: 1200, margin: "0 auto" }}>
+      <div style={{ position: "relative", zIndex: 1, maxWidth: 1280, margin: "0 auto", padding: "0 clamp(24px, 4vw, 48px)" }}>
         {/* Encabezado */}
         <div style={{ maxWidth: 640 }}>
           <p style={{

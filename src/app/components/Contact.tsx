@@ -28,7 +28,7 @@ export function Contact() {
       <div aria-hidden="true" style={{ position: "absolute", inset: 0, backgroundImage: `url(${heroBanner})`, backgroundSize: "cover", backgroundPosition: "center" }} />
       <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "linear-gradient(rgba(11,18,11,0.86), rgba(11,18,11,0.92))" }} />
       <div aria-hidden="true" style={{ position: "absolute", inset: 0, pointerEvents: "none", opacity: 0.16, mixBlendMode: "overlay", backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")" }} />
-      <div style={{ position: "relative", zIndex: 1, maxWidth: 1280, margin: "0 auto", padding: "0 48px" }}>
+      <div style={{ position: "relative", zIndex: 1, maxWidth: 1280, margin: "0 auto", padding: "0 clamp(24px, 4vw, 48px)" }}>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "80px 120px", alignItems: "start" }} className="contact-grid">
           {/* Left */}
           <div>

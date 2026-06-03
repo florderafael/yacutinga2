@@ -11,7 +11,7 @@ export function About() {
         position: "relative",
         background: "#F2EDE3",
         overflow: "hidden",
-        padding: "clamp(96px, 13vw, 170px) 24px",
+        padding: "clamp(96px, 13vw, 170px) 0",
       }}
     >
       {/* Textura: líneas finas tipo curvas de nivel / río */}
@@ -29,7 +29,7 @@ export function About() {
         }}
       />
 
-      <div style={{ position: "relative", zIndex: 1, maxWidth: 1080, margin: "0 auto", textAlign: "center" }}>
+      <div style={{ position: "relative", zIndex: 1, maxWidth: 1280, margin: "0 auto", textAlign: "center", padding: "0 clamp(24px, 4vw, 48px)" }}>
         <h2 style={{
           fontFamily: "'DM Serif Display', serif",
           color: "#1B2E1C",

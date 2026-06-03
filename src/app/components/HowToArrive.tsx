@@ -12,8 +12,8 @@ export function HowToArrive() {
   const { t } = useLang();
 
   return (
-    <section id="como-llegar" style={{ background: "#ECE5D7", padding: "clamp(64px, 8vw, 110px) 24px" }}>
-      <div style={{ maxWidth: 1180, margin: "0 auto" }}>
+    <section id="como-llegar" style={{ background: "#ECE5D7", padding: "clamp(64px, 8vw, 110px) 0" }}>
+      <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 clamp(24px, 4vw, 48px)" }}>
         <div className="arrive-split">
           {/* Imagen recortada */}
           <div className="arrive-photo">
