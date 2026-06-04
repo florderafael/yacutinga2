@@ -1,10 +1,8 @@
 {
   "headerKickerEs": "Estadías all-inclusive",
   "headerKickerEn": "All-inclusive stays",
-  "headerTitleEs": "Dos maneras de entrar a la selva",
-  "headerTitleEn": "Two ways into the rainforest",
-  "noteEs": "Cupos limitados · Precios a consultar.",
-  "noteEn": "Limited spaces · Prices on request.",
+  "headerTitleEs": "Conocé nuestros paquetes",
+  "headerTitleEn": "Explore our packages",
   "items": [
     {
       "image": "/uploads/pkg-experience.webp",
@@ -19,11 +17,31 @@
       "panel": "#1B2E1C",
       "objPos": "center 96%",
       "details": [
-        { "icon": "moon", "es": "2 noches", "en": "2 nights" },
-        { "icon": "meals", "es": "Todas las comidas", "en": "All meals" },
-        { "icon": "walks", "es": "Caminatas día y noche", "en": "Day & night walks" },
-        { "icon": "bird", "es": "Avistaje de aves", "en": "Birdwatching" },
-        { "icon": "transfer", "es": "Traslado 4x4", "en": "4x4 transfer" }
+        {
+          "icon": "moon",
+          "es": "2 noches",
+          "en": "2 nights"
+        },
+        {
+          "icon": "meals",
+          "es": "Todas las comidas",
+          "en": "All meals"
+        },
+        {
+          "icon": "walks",
+          "es": "Caminatas día y noche",
+          "en": "Day & night walks"
+        },
+        {
+          "icon": "bird",
+          "es": "Avistaje de aves",
+          "en": "Birdwatching"
+        },
+        {
+          "icon": "transfer",
+          "es": "Traslado 4x4",
+          "en": "4x4 transfer"
+        }
       ]
     },
     {
@@ -39,12 +57,34 @@
       "panel": "#3D5A3E",
       "objPos": "center 92%",
       "details": [
-        { "icon": "moon", "es": "3 noches", "en": "3 nights" },
-        { "icon": "meals", "es": "Todas las comidas", "en": "All meals" },
-        { "icon": "kayak", "es": "Kayak en el río", "en": "River kayaking" },
-        { "icon": "community", "es": "Comunidad guaraní", "en": "Guaraní community" },
-        { "icon": "transfer", "es": "Traslado 4x4", "en": "4x4 transfer" }
+        {
+          "icon": "moon",
+          "es": "3 noches",
+          "en": "3 nights"
+        },
+        {
+          "icon": "meals",
+          "es": "Todas las comidas",
+          "en": "All meals"
+        },
+        {
+          "icon": "kayak",
+          "es": "Kayak en el río",
+          "en": "River kayaking"
+        },
+        {
+          "icon": "community",
+          "es": "Comunidad guaraní",
+          "en": "Guaraní community"
+        },
+        {
+          "icon": "transfer",
+          "es": "Traslado 4x4",
+          "en": "4x4 transfer"
+        }
       ]
     }
-  ]
+  ],
+  "noteEs": "Cupos limitados · Precios a consultar.",
+  "noteEn": "Limited spaces · Prices on request."
 }
