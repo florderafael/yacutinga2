@@ -12,8 +12,8 @@
       "nightsEn": "2 nights",
       "descEs": "La puerta de entrada. Dos noches para descubrir el bosque, sus habitantes y el silencio profundo de la selva paranaense.",
       "descEn": "The gateway. Two nights to discover the forest, its inhabitants and the deep silence of the Paranaense jungle.",
-      "priceEs": "600.000",
-      "priceEn": "600 USD",
+      "priceEs": "",
+      "priceEn": "",
       "panel": "#1B2E1C",
       "objPos": "center 96%",
       "details": [
@@ -82,17 +82,6 @@
           "es": "Traslado 4x4",
           "en": "4x4 transfer"
         }
-      ]
-    },
-    {
-      "image": "/uploads/565566423_18434858461100929_3635564992185559091_n.webp",
-      "nameEs": "Prueba",
-      "nameEn": "prueba",
-      "nightsEs": "2 noches",
-      "nightsEn": "2 nights ",
-      "panel": "#1B2E1C",
-      "details": [
-        {}
       ]
     }
   ],
