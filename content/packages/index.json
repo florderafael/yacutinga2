@@ -83,6 +83,17 @@
           "en": "4x4 transfer"
         }
       ]
+    },
+    {
+      "image": "/uploads/565566423_18434858461100929_3635564992185559091_n.webp",
+      "nameEs": "Prueba",
+      "nameEn": "prueba",
+      "nightsEs": "2 noches",
+      "nightsEn": "2 nights ",
+      "panel": "#1B2E1C",
+      "details": [
+        {}
+      ]
     }
   ],
   "noteEs": "Cupos limitados · Precios a consultar.",
