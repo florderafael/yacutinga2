@@ -1,0 +1,29 @@
+fragment PackagesParts on Packages {
+  __typename
+  headerKickerEs
+  headerKickerEn
+  headerTitleEs
+  headerTitleEn
+  items {
+    __typename
+    image
+    nameEs
+    nameEn
+    nightsEs
+    nightsEn
+    descEs
+    descEn
+    priceEs
+    priceEn
+    panel
+    objPos
+    details {
+      __typename
+      icon
+      es
+      en
+    }
+  }
+  noteEs
+  noteEn
+}
